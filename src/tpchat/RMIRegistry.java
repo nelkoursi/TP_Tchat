@@ -16,6 +16,8 @@ import java.rmi.registry.Registry;
  * @author Nora EL KOURSI, Amandine LAVERGNE, Tony MARTIN
  */
 public class RMIRegistry implements Registry{
+        
+        private String[] listeMachines;
 
         @Override
         public Remote lookup(String string) throws RemoteException, NotBoundException, AccessException {
@@ -39,7 +41,7 @@ public class RMIRegistry implements Registry{
 
         @Override
         public String[] list() throws RemoteException, AccessException {
-                throw new UnsupportedOperationException("Not supported yet.");
+                return listeMachines;
         }
         
 }
