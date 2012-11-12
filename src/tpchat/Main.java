@@ -6,7 +6,7 @@ package tpchat;
 
 /**
  *
- * @author Tony MARTIN
+ * @author Nora EL KOURSI, Amandine LAVERGNE, Tony MARTIN
  */
 public class Main {
 
