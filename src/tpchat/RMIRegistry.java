@@ -13,7 +13,7 @@ import java.rmi.registry.Registry;
 
 /**
  *
- * @author Tony MARTIN
+ * @author Nora EL KOURSI, Amandine LAVERGNE, Tony MARTIN
  */
 public class RMIRegistry implements Registry{
 
