@@ -8,7 +8,7 @@ import java.rmi.Remote;
 
 /**
  *
- * @author Tony MARTIN
+ * @author Nora EL KOURSI, Amandine LAVERGNE, Tony MARTIN
  */
 public interface Client extends Remote{
         
