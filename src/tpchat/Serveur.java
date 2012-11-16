@@ -7,9 +7,9 @@ package tpchat;
 import java.rmi.Remote;
 
 /**
- *
- * @author Tony MARTIN
- */
+*
+* @author Gaëtan ARRONDEAU, Nora EL KOURSI, Amandine LAVERGNE, Tony MARTIN
+*/
 public interface Serveur extends Remote{
         public void afficheMessage();
 }

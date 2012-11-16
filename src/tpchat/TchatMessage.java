@@ -24,6 +24,11 @@ import bean.TchatMessage;
 import net.TchatClient;
 import net.TchatClient.StatusClient;
 
+/**
+*
+* @author Gaëtan ARRONDEAU, Nora EL KOURSI, Amandine LAVERGNE, Tony MARTIN
+*/
+
 public class TchatMainWindow extends JFrame {
    
    private static final long serialVersionUID = 1L;

@@ -4,6 +4,10 @@
  */
 package tpchat;
 
+/**
+*
+* @author Gaëtan ARRONDEAU, Nora EL KOURSI, Amandine LAVERGNE, Tony MARTIN
+*/
 
 public class ServeurChat implements Serveur {
         
