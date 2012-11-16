@@ -7,3 +7,4 @@ manifest.mf
 /build/
 
 /dist/
+src/.DS_Store
