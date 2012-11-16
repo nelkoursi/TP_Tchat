@@ -8,3 +8,8 @@ manifest.mf
 
 /dist/
 src/.DS_Store
+<<<<<<< HEAD
+=======
+
+src/tpchat/.DS_Store
+>>>>>>> .gitignore
