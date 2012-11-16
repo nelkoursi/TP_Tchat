@@ -1,4 +1,4 @@
-package src.tpchat;
+package src.src.tpchat;
 
 import java.rmi.*;
 import java.rmi.server.UnicastRemoteObject;
