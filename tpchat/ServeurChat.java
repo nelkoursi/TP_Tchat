@@ -22,19 +22,20 @@ import java.util.logging.Logger;
  */
 public class ServeurChat implements Serveur {
 
-        private HashMap<String, Client> utilisateurs;
+        private HashMap<String, ClientServeur> utilisateurs;
+        private LinkedList<String> messages;
+        private int port;
+        private String url;
         
         //getteurs et setteurs de notre HashMap d'utilisateurs
-        public HashMap<String, Client> getUtilisateurs() {
+        public HashMap<String, ClientServeur> getUtilisateurs() {
                 return utilisateurs;
         }
 
-        public void setUtilisateurs(HashMap<String, Client> utilisateurs) {
+        public void setUtilisateurs(HashMap<String, ClientServeur> utilisateurs) {
                 this.utilisateurs = utilisateurs;
         }
         
-        private LinkedList<String> messages;
-
         //getteurs et setteurs de notre liste de messages
         public LinkedList<String> getMessages() {
                 return messages;
@@ -44,8 +45,7 @@ public class ServeurChat implements Serveur {
                 this.messages = messages;
         }
         
-        private int port;
-       
+               
         //getteurs et setteurs de port
         public int getPort() {
                 return port;
@@ -55,8 +55,7 @@ public class ServeurChat implements Serveur {
                 this.port = port;
         }
 
-        private String url;
-        
+               
         //getteurs et setteurs de l'url
         public String getUrl() {
                 return url;
@@ -68,40 +67,40 @@ public class ServeurChat implements Serveur {
 
         //constructeur de la classe
         public ServeurChat() {
-                utilisateurs = new HashMap<String, Client>();
+                utilisateurs = new HashMap<String, ClientServeur>();
                 messages = new LinkedList<String>();
         }
 
         //méthode pour se connecter au serveur
         @Override
-        public void connect(String id, Client client) throws IDIndisponibleException {
+        public void connect(String id, ClientServeur ClientServeur) throws IDIndisponibleException {
                 if (utilisateurs.containsKey(id)) {
                         throw new IDIndisponibleException();
                 } else {
-                        addClient(id, client);
+                        addClientServeur(id, ClientServeur);
                 }
         }
 
         //méthode pour envoyer un message
         @Override
-        public void send(String msg, Client client) throws RemoteException {
-                addMessage(msg, client);
+        public void send(String msg, ClientServeur ClientServeur) throws RemoteException {
+                addMessage(msg, ClientServeur);
         }
 
-        //méthode pour enlever un client
+        //méthode pour enlever un ClientServeur
         @Override
-        public void bye(Client client) throws RemoteException {
-                utilisateurs.remove(client);
+        public void bye(ClientServeur ClientServeur) throws RemoteException {
+                utilisateurs.remove(ClientServeur);
         }
 
-        //méthode pour identifier quels sont les clients qui sont connectés
+        //méthode pour identifier quels sont les ClientServeurs qui sont connectés
         @Override
         public String who() {
-                String clients = "Utilisateurs connectés : \n";
+                String ClientServeurs = "Utilisateurs connectés : \n";
                 for (String id : utilisateurs.keySet()) {
-                        clients = clients + id + "\n";
+                        ClientServeurs = ClientServeurs + id + "\n";
                 }
-                return clients;
+                return ClientServeurs;
         }
 
         //getteur d'un message
@@ -110,14 +109,14 @@ public class ServeurChat implements Serveur {
                 return messages.get(i);
         }
         
-        //méthode pour ajouter un client
-        private void addClient(String id, Client client) {
-                utilisateurs.put(id, client);
+        //méthode pour ajouter un ClientServeur
+        private void addClientServeur(String id, ClientServeur ClientServeur) {
+                utilisateurs.put(id, ClientServeur);
         }
         
         //méthode pour ajouter un message
-        private void addMessage(String msg, Client client) {
-            messages.addLast(client + " a écrit : " + msg);
+        private void addMessage(String msg, ClientServeur ClientServeur) {
+            messages.addLast(ClientServeur + " a écrit : " + msg);
         }
         
 

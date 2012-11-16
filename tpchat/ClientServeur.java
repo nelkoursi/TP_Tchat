@@ -7,6 +7,10 @@ import java.rmi.*;
  * @author Gaetan ARRONDEAU, Nora EL KOURSI, Amandine LAVERGNE, Tony MARTIN
  */
 public class ClientServeur  implements Serializable  {
+	/**
+	 * ajout de la sérial version
+	 */
+	private static final long serialVersionUID = 1L;
 	protected String id;
 	protected boolean estConnecte = 0;
 	protected InterfaceRMIChat interfaceChat;
