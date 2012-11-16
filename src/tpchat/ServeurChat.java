@@ -12,4 +12,17 @@ public class ServeurChat extends UnicastRemoteObject implements InterfaceRMIChat
    // Implémentation de la méthode distante
     public void printMessage() throws java.rmi.RemoteException {
     	System.out.println(message);
+    
+    public static void main(String args[]) {
+    	try {
+    		// Crée une instance de l ’objet serveur.
+    		InterfaceRMIChat obj = new ServeurChat();
+    		 
+    		// Enregistre l'objet créer auprès du serveur de noms.
+    		Naming.rebind("//ma_machine/mon_serveur", obj);
+    		System.out.println("ServeurChat " + " bound in registry");
+    		} 
+    		catch (Exception exc) {… }
+    	}
     }
+}
