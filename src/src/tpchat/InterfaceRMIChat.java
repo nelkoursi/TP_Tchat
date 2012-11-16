@@ -1,4 +1,4 @@
-package src.tpchat;
+package tpchat;
 
 public interface InterfaceRMIChat extends java.rmi.Remote {
 	public void sayHello() 
